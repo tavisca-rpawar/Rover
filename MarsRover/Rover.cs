@@ -15,15 +15,19 @@ namespace MarsRover
         }
         private void TurnLeft()
         {
-            switch(direction)
+            switch (direction)
             {
-                case Directions.N: direction = Directions.W;
+                case Directions.N:
+                    direction = Directions.W;
                     break;
-                case Directions.S: direction = Directions.E;
+                case Directions.S:
+                    direction = Directions.E;
                     break;
-                case Directions.E: direction = Directions.N;
+                case Directions.E:
+                    direction = Directions.N;
                     break;
-                case Directions.W: direction = Directions.S;
+                case Directions.W:
+                    direction = Directions.S;
                     break;
                 default:
                     break;
@@ -33,13 +37,17 @@ namespace MarsRover
         {
             switch (direction)
             {
-                case Directions.N: direction = Directions.E;
+                case Directions.N:
+                    direction = Directions.E;
                     break;
-                case Directions.S: direction = Directions.W;
+                case Directions.S:
+                    direction = Directions.W;
                     break;
-                case Directions.E: direction = Directions.S;
+                case Directions.E:
+                    direction = Directions.S;
                     break;
-                case Directions.W: direction = Directions.N;
+                case Directions.W:
+                    direction = Directions.N;
                     break;
                 default:
                     break;
@@ -47,33 +55,41 @@ namespace MarsRover
         }
         private void MoveStraight()
         {
-            switch(direction)
+            switch (direction)
             {
-                case Directions.N: Y += 1;
+                case Directions.N:
+                    Y += 1;
                     break;
-                case Directions.S: Y -= 1;
+                case Directions.S:
+                    Y -= 1;
                     break;
-                case Directions.E: X += 1;
+                case Directions.E:
+                    X += 1;
                     break;
-                case Directions.W: X -= 1;
+                case Directions.W:
+                    X -= 1;
                     break;
             }
         }
         public void Move(string moves)
         {
-            foreach(var move in moves)
+            foreach (var move in moves)
             {
-                switch(move)
+                switch (move)
                 {
-                    case 'M': MoveStraight();
+                    case 'M':
+                        MoveStraight();
                         break;
-                    case 'L': TurnLeft();
+                    case 'L':
+                        TurnLeft();
                         break;
-                    case 'R': TurnRight();
+                    case 'R':
+                        TurnRight();
                         break;
                 }
             }
-            Console.WriteLine("( "+ X + ", " + Y + ", " + direction + ")");
+            Console.WriteLine("Final Position of Rover");
+            Console.WriteLine("( " + X + ", " + Y + ", " + direction + ")");
         }
     }
 }
