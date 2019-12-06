@@ -73,6 +73,7 @@ namespace MarsRover
                         break;
                 }
             }
+            Console.WriteLine("Final Position of Rover");
             Console.WriteLine("( "+ X + ", " + Y + ", " + direction + ")");
         }
     }
